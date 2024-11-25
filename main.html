@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CALCGAS</title>
+</head>
+<body>
+    <header>
+        <h1>calculadora de consumo de gasolina</h1>
+        <h3>digite nos seguintes campos:</p>
+    </header>
+
+    <main>
+        <section id="quilometragem">
+            <input id="Trajeto" type="text" placeholder="Km Do Trajeto">
+            <input id="volta" type="checkbox">
+        </section>
+
+        <input id="consumo" type="text" placeholder="Consumo Do Carro">
+
+        <input id="preco" type="text" placeholder="Preço Da Gasolina">
+
+        <input id="calcular" type="button" value="Calcular" onclick="calcular()">
+    </main>
+
+    <div id="resultado"></div>
+</body>
+</html>
