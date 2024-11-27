@@ -8,23 +8,27 @@
 </head>
 <body>
     <header>
-        <h1>calculadora de consumo de gasolina</h1>
-        <h3>digite nos seguintes campos:</p>
+        <h1>Calculadora De Consumo De Gasolina</h1>
+        <h3>digite nos seguintes campos:</h3>
     </header>
 
     <main>
         <section id="quilometragem">
-            <input id="Trajeto" type="text" placeholder="Km Do Trajeto">
-            <input id="volta" type="checkbox">
+            <input id="trajeto" type="number" step="0.01" min="0" placeholder="Km Do Trajeto">
+            <div id="checkbox">
+                <input id="volta" type="checkbox" onclick="dobro()">
+                <label for="trajeto">Calcular com a volta</label>
+            </div>
         </section>
 
-        <input id="consumo" type="text" placeholder="Consumo Do Carro">
+        <input id="consumo" type="number" step="0.01" min="0" placeholder="Consumo Do Carro">
 
-        <input id="preco" type="text" placeholder="Preço Da Gasolina">
+        <input id="preco" type="number" step="0.01" min="0" placeholder="Preço Da Gasolina">
 
         <input id="calcular" type="button" value="Calcular" onclick="calcular()">
+        <div id="resultado"></div>
     </main>
 
-    <div id="resultado"></div>
+    
 </body>
 </html>

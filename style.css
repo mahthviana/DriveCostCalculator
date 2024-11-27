@@ -1,13 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+:root {
+    --prussian-blue: #032A3F;
+    --prussian-blue-light: #1F658B;
+    --prussian-blue-dark-1: #012A3F;
+    --prussian-blue-dark-2: #012A3E;
+    --prussian-blue-dark-3: #012A40;
+    --cadet-gray: #A3ADB1ff;
+    --title-color: #CDD8DA;
+}
+
+
+
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
     display: flex;
-
     flex-direction: column;
-    align-content: center;
-    align-items: center;
+
+    font-family: Parkinsans, "sans-serif";
+
+    margin: 100px 250px;
+
+    background-color: var(--prussian-blue);
+
+
 }
 
 header {
@@ -15,6 +35,90 @@ header {
 
     flex-direction: column;
     align-content: center;
+    align-items: center;
+
+    color: var(--title-color);
+
+    background-color: var(--prussian-blue-light);
+    padding-top: 4rem;
+    border-radius: 10px 10px 0 0;
+}
+
+h3 {
+    margin-top: -1rem;
+
+    text-transform: uppercase;
+}
+
+main {
+    display: flex;
+
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    row-gap: 1rem;
+    padding-bottom: 4rem;
+
+    background-color: var(--prussian-blue-light);
+    border-radius: 0 0 10px 10px;
+}
+
+#quilometragem {
+    display: flex;
+
+    flex-direction: column;
 
 }
 
+#quilometragem, label {
+    font-size: 14px;
+    color: var(--title-color);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+    
+    border: 1px none whitesmoke;
+    border-radius: 4px;
+
+    padding: 0.5rem 3rem 0.5rem 0.5rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+#calcular {
+    margin-top: 0.7rem;
+    padding: 0.5rem 1.5rem;
+
+    border: 1px none black;
+    border-radius: 50px;
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-family: Parkinsans, "sans-serif";
+
+    background-color: var(--title-color);
+
+    transition: background-color 0.3s ease;
+}
+
+#calcular:hover {
+    background-color: var(--cadet-gray);
+}
+
+#consumo {
+    margin-bottom: 0.7rem;
+} 
+
+@media (max-width: 768px) {
+    
+    body {
+        width: 90%;
+        overflow: auto;
+    }
+}
