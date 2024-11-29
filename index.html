@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>CALCGAS</title>
 </head>
+<!-- 
+    O QUE ESTÁ ERRADO...
+    TODO O CORPO EM QUESTÃO DO SITE DEVERIA ESTAR NO <MAIN></MAIN>, PORÉM NÃO ESTÁ
+    PRETENDO FUTURAMENTE CONCERTAR ISSO E DEIXAR UM SITE COM MELHORES USOS DE BOAS PRÁTICAS
+-->
 <body>
     <header>
         <h1>Calculadora De Consumo De Gasolina</h1>
@@ -14,7 +19,7 @@
 
     <main>
         <section id="quilometragem">
-            <input id="trajeto" type="number" step="0.01" min="0" placeholder="Km Do Trajeto">
+            <input id="trajeto" type="number" step="0.01" min="0" placeholder="Km Do Trajeto (km/l)">
             <div id="checkbox">
                 <input id="volta" type="checkbox" onclick="dobro()">
                 <label for="trajeto">Calcular com a volta</label>
