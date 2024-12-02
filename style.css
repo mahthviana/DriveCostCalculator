@@ -12,8 +12,6 @@
 }
 
 
-
-
 body {
     margin: 0;
     padding: 0;
@@ -24,11 +22,11 @@ body {
 
     font-family: Parkinsans, "sans-serif";
 
-    margin: 100px 250px;
+    margin:15px 250px;
 
     background-color: var(--prussian-blue);
 
-
+    overflow: hidden;
 }
 
 header {
@@ -45,7 +43,7 @@ header {
     border-radius: 10px 10px 0 0;
 }
 
-h3 {
+header > h3 {
     margin-top: -1rem;
 
     text-transform: uppercase;
@@ -59,7 +57,7 @@ main {
     align-items: center;
 
     row-gap: 1rem;
-    padding-bottom: 4rem;
+    padding-bottom: 1.5rem;
 
     background-color: var(--prussian-blue-light);
     border-radius: 0 0 10px 10px;
@@ -116,6 +114,23 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-bottom: 0.7rem;
 } 
 
+#resultado > #campos {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+
+    text-align: center;
+    color: var(--title-color);
+    font-size: 1rem;
+}
+
+#resultado > #campos > #totalpagar {
+    font-size: 1rem;
+}
+#resultado > #campos > #totalpagar > #valor{
+    text-decoration: 2.4px underline;
+}
+
 @media (max-width: 768px) {
     :root {
         font-size: 12px;
@@ -125,6 +140,9 @@ input[type="number"]::-webkit-inner-spin-button {
         width: 90%;
         overflow: none;
         margin: 150px 25px;
+
+
+        overflow: hidden;
     }
 
     header {
