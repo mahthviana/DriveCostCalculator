@@ -19,37 +19,33 @@
 
     <main>
         <section id="quilometragem">
-            <input id="trajeto" type="number" step="0.01" min="0" placeholder="Km Do Trajeto (km/l)">
+            <input id="trajeto" type="number" step="0.01" min="0" placeholder="Km Do Trajeto (km)">
             <div id="checkbox">
-                <input id="volta" type="checkbox" onclick="dobro()">
+                <input id="volta" type="checkbox" onchange="dobro()">
                 <label for="trajeto">Calcular com a volta</label>
             </div>
         </section>
 
-        <input id="consumo" type="number" step="0.01" min="0" placeholder="Consumo Do Carro">
+        <input id="consumo" type="number" step="0.01" min="0" placeholder="Consumo Do Carro (km/l)">
 
         <input id="preco" type="number" step="0.01" min="0" placeholder="Preço Da Gasolina">
 
         <input id="calcular" type="button" value="Calcular" onclick="calcular()">
         <div id="resultado">
             <section id="campos">
-                <div id="totalpagar">
-                    <h3>
-                        <strong>Total a pagar</strong>
-                    </h3>
-                    <h3 id="valor">R$10,80</h3>
-                </div>
-                <div id="kmrodados">
-                    <h3>Km rodados</h3>
-                    <h3>50.12Km</h3>
-                </div>
-                <div id="consumomedio">
-                    <h3>Consumo médio (carro)</h3>
+                <div id="precodagasolina">
+                    <h3>Preço da gasolina</h3>
                     <h3>10Km/L</h3>
                 </div>
                 <div id="litrosgastos">
                     <h3>Litros gastos na viagem</h3>
                     <h3>5.2L</h3>
+                </div>
+                <div id="totalpagar">
+                    <h3>
+                        <strong>Total a pagar</strong>
+                    </h3>
+                    <h3 id="valor">R$10,80</h3>
                 </div>
             </section>
         </div>
