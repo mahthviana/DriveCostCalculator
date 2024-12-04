@@ -1,8 +1,8 @@
-function dobro(trajeto) {
-    trajeto = parseFloat(trajeto)
-    idaEVolta = trajeto * 2;
-    return idaEVolta;
-}
+// function dobro(trajeto) {
+//     trajeto = parseFloat(trajeto)
+//     idaEVolta = trajeto * 2;
+//     return idaEVolta;
+// }
 
 function calcular(trajeto, consumo, preco) {
     trajeto = parseFloat(trajeto);
@@ -15,28 +15,47 @@ function calcular(trajeto, consumo, preco) {
     
 }
 
+// começa aqui
 var volta = document.getElementById('volta');
+var trajetoInput = document.getElementById('trajeto');
+var valorOriginal = 0;
+var jaDobrado = false;
 
 volta.addEventListener('change', function(e) {
     e.preventDefault();
-    var volta = document.getElementById('volta');
-    
-    var trajeto = document.getElementById('trajeto').value;
-    var trajetoIdaEVolta = dobro(trajeto);
+    let cont = 0 // entender por que esse cont só aumenta uma vez
+    var trajeto = parseFloat(trajetoInput.value);
+    if (isNaN(trajeto)) return;
+    console.log("checked: ", volta.checked)
 
-    // tentando fazer uma verificação para dobrar o valor ou voltar ao valor inicial
     if (volta.checked == true) {
-        document.getElementById('trajeto').value = trajetoIdaEVolta;
+        cont++ 
+        trajetoInput.value = trajeto * 2;
+        console.log("cont:", cont)
+        console.log("ultimo valor do trajeto:",trajeto)
+        if (cont % 2 == 0) {
+            jaDobrado = true;
+        }
+
+    } else if (volta.checked == false) {
+        cont++
+        jaDobrado = false;
     }
-    else if (volta.checked = false) {
-        var valorInicial = trajetoIdaEVolta / 2
-        document.getElementById('trajeto').value = valorInicial
-    }
-
-
-
     
-})
+});
+
+trajetoInput.addEventListener('input', function() {
+    var valorDigitado = parseFloat(trajetoInput.value);
+    if (!isNaN(valorDigitado) && valorOriginal === 0) {
+        valorOriginal = valorDigitado;
+    }
+});
+
+function dobro(valor) {
+    return valor * 2;
+}
+
+// termina aquui
 
 var botao = document.getElementById('calcular');
 
@@ -52,5 +71,3 @@ botao.addEventListener('click', function(e) {
 
     console.log(resultado);
 })
-
-
