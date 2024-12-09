@@ -1,9 +1,3 @@
-// function dobro(trajeto) {
-//     trajeto = parseFloat(trajeto)
-//     idaEVolta = trajeto * 2;
-//     return idaEVolta;
-// }
-
 function calcular(trajeto, consumo, preco) {
     trajeto = parseFloat(trajeto);
     consumo = parseFloat(consumo);
@@ -14,6 +8,12 @@ function calcular(trajeto, consumo, preco) {
     return aPagar;
     
 }
+
+
+function dobro(valor) {
+    return valor * 2;
+}
+
 
 // começa aqui
 var volta = document.getElementById('volta');
@@ -47,21 +47,15 @@ volta.addEventListener('change', function(e) {
         trajetoInput.value = valorOriginal;
     };
 });
-
-
-
-function dobro(valor) {
-    return valor * 2;
-}
-
 // termina aquui
 
 var botao = document.getElementById('calcular');
 
-
+cont = 0;
 botao.addEventListener('click', function(e) {
     e.preventDefault();
-
+    cont += 1
+    console.log(cont)
     var trajeto = parseFloat(document.getElementById('trajeto').value);
     var consumo = parseFloat(document.getElementById('consumo').value);
     var preco = parseFloat(document.getElementById('preco').value);
@@ -72,7 +66,9 @@ botao.addEventListener('click', function(e) {
     var litrosgastos = document.getElementById('litrosgastos');
     var totalPagar = document.getElementById('totalpagar');
 
-    
+
+
+    if (!isNaN(trajeto) && !isNaN(consumo) && !isNaN(preco)) {
     // PREÇO DA GASOLINA
     let h3Preco = document.createElement('h3');
     let h3PrecoValor = document.createElement('h3');
@@ -103,6 +99,10 @@ botao.addEventListener('click', function(e) {
     totalPagar.appendChild(h3Pagamento);
     totalPagar.appendChild(h3PagamentoValor);
 
+    }
+
+    // RESET NAS DIVS DOS RESULTADOS
     
+
     console.log(resultado);
 })
